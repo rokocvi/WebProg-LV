@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Galerija filmskih slika – prikaz slika s lightbox efektom bez JavaScripta.">
+  <title>Galerija slika – Filmoteka</title>
+  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="stylesheet" href="../styles/style_slike.css">
+</head>
+<body>
+
+  <header>
+    <h1>🎬 Filmoteka – Galerija slika</h1>
+    <div class="nav-wrapper">
+      <label class="nav-toggle-label" for="nav-toggle" aria-label="Otvori navigacijski izbornik">
+        ☰ Izbornik
+      </label>
+      <input type="checkbox" id="nav-toggle" aria-hidden="true">
+      <nav aria-label="Primarna navigacija" role="navigation">
+        <ul class="nav-menu" role="list">
+          <li role="listitem"><a href="../pages/index.html">Početna</a></li>
+          <li role="listitem"><a href="../pages/grafikon.html">Grafikoni</a></li>
+          <li role="listitem"><a href="../pages/slike.html" aria-current="page">Galerija</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="content">
+      <h2 class="galerija-naslov">Galerija slika</h2>
+      <p class="galerija-opis">Klikni na sliku za prikaz u punoj veličini.</p>
+
+      <!-- NAPOMENA: Slike su privremeno s picsum.photos.
+           Zamijeni src s pravim posterima filmova kada ih skineš lokalno u images/ folder. -->
+
+      <section class="galerija" aria-label="Galerija filmskih slika">
+
+        <div class="lb-item">
+          <input type="checkbox" id="lb1" class="lb-toggle" aria-hidden="true">
+          <figure class="galerija_slika">
+            <label for="lb1"><img src="https://picsum.photos/seed/diner/300/200" alt="Diner (1982)" loading="lazy" width="300" height="200"></label>
+            <figcaption>Diner (1982)</figcaption>
+          </figure>
+          <div class="lightbox-overlay">
+            <div class="lightbox-box">
+              <label for="lb1" class="lightbox-close">✕ Zatvori</label>
+              <img src="https://picsum.photos/seed/diner/900/600" alt="Diner uvećano" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <div class="lb-item">
+          <input type="checkbox" id="lb2" class="lb-toggle" aria-hidden="true">
+          <figure class="galerija_slika">
+            <label for="lb2"><img src="https://picsum.photos/seed/deadbang/300/200" alt="Dead-Bang (1989)" loading="lazy" width="300" height="200"></label>
+            <figcaption>Dead-Bang (1989)</figcaption>
+          </figure>
+          <div class="lightbox-overlay">
+            <div class="lightbox-box">
+              <label for="lb2" class="lightbox-close">✕ Zatvori</label>
+              <img src="https://picsum.photos/seed/deadbang/900/600" alt="Dead-Bang uvećano" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <div class="lb-item">
+          <input type="checkbox" id="lb3" class="lb-toggle" aria-hidden="true">
+          <figure class="galerija_slika">
+            <label for="lb3"><img src="https://picsum.photos/seed/somelikeit/300/200" alt="Some Like It Hot (1959)" loading="lazy" width="300" height="200"></label>
+            <figcaption>Some Like It Hot (1959)</figcaption>
+          </figure>
+          <div class="lightbox-overlay">
+            <div class="lightbox-box">
+              <label for="lb3" class="lightbox-close">✕ Zatvori</label>
+              <img src="https://picsum.photos/seed/somelikeit/900/600" alt="Some Like It Hot uvećano" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <div class="lb-item">
+          <input type="checkbox" id="lb4" class="lb-toggle" aria-hidden="true">
+          <figure class="galerija_slika">
+            <label for="lb4"><img src="https://picsum.photos/seed/failsafe/300/200" alt="Fail-Safe (1964)" loading="lazy" width="300" height="200"></label>
+            <figcaption>Fail-Safe (1964)</figcaption>
+          </figure>
+          <div class="lightbox-overlay">
+            <div class="lightbox-box">
+              <label for="lb4" class="lightbox-close">✕ Zatvori</label>
+              <img src="https://picsum.photos/seed/failsafe/900/600" alt="Fail-Safe uvećano" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <div class="lb-item">
+          <input type="checkbox" id="lb5" class="lb-toggle" aria-hidden="true">
+          <figure class="galerija_slika">
+            <label for="lb5"><img src="https://picsum.photos/seed/sleeping/300/200" alt="Sleeping with the Enemy (1990)" loading="lazy" width="300" height="200"></label>
+            <figcaption>Sleeping with the Enemy (1990)</figcaption>
+          </figure>
+          <div class="lightbox-overlay">
+            <div class="lightbox-box">
+              <label for="lb5" class="lightbox-close">✕ Zatvori</label>
+              <img src="https://picsum.photos/seed/sleeping/900/600" alt="Sleeping with the Enemy uvećano" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <div class="lb-item">
+          <input type="checkbox" id="lb6" class="lb-toggle" aria-hidden="true">
+          <figure class="galerija_slika">
+            <label for="lb6"><img src="https://picsum.photos/seed/atclose/300/200" alt="At Close Range (1986)" loading="lazy" width="300" height="200"></label>
+            <figcaption>At Close Range (1986)</figcaption>
+          </figure>
+          <div class="lightbox-overlay">
+            <div class="lightbox-box">
+              <label for="lb6" class="lightbox-close">✕ Zatvori</label>
+              <img src="https://picsum.photos/seed/atclose/900/600" alt="At Close Range uvećano" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <div class="lb-item">
+          <input type="checkbox" id="lb7" class="lb-toggle" aria-hidden="true">
+          <figure class="galerija_slika">
+            <label for="lb7"><img src="https://picsum.photos/seed/majestyk/300/200" alt="Mr. Majestyk (1974)" loading="lazy" width="300" height="200"></label>
+            <figcaption>Mr. Majestyk (1974)</figcaption>
+          </figure>
+          <div class="lightbox-overlay">
+            <div class="lightbox-box">
+              <label for="lb7" class="lightbox-close">✕ Zatvori</label>
+              <img src="https://picsum.photos/seed/majestyk/900/600" alt="Mr. Majestyk uvećano" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <div class="lb-item">
+          <input type="checkbox" id="lb8" class="lb-toggle" aria-hidden="true">
+          <figure class="galerija_slika">
+            <label for="lb8"><img src="https://picsum.photos/seed/aboutlast/300/200" alt="About Last Night (1986)" loading="lazy" width="300" height="200"></label>
+            <figcaption>About Last Night (1986)</figcaption>
+          </figure>
+          <div class="lightbox-overlay">
+            <div class="lightbox-box">
+              <label for="lb8" class="lightbox-close">✕ Zatvori</label>
+              <img src="https://picsum.photos/seed/aboutlast/900/600" alt="About Last Night uvećano" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <div class="lb-item">
+          <input type="checkbox" id="lb9" class="lb-toggle" aria-hidden="true">
+          <figure class="galerija_slika">
+            <label for="lb9"><img src="https://picsum.photos/seed/inbed/300/200" alt="In Bed With Madonna (1991)" loading="lazy" width="300" height="200"></label>
+            <figcaption>In Bed With Madonna (1991)</figcaption>
+          </figure>
+          <div class="lightbox-overlay">
+            <div class="lightbox-box">
+              <label for="lb9" class="lightbox-close">✕ Zatvori</label>
+              <img src="https://picsum.photos/seed/inbed/900/600" alt="In Bed With Madonna uvećano" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <div class="lb-item">
+          <input type="checkbox" id="lb10" class="lb-toggle" aria-hidden="true">
+          <figure class="galerija_slika">
+            <label for="lb10"><img src="https://picsum.photos/seed/bowery/300/200" alt="Bowery at Midnight (1942)" loading="lazy" width="300" height="200"></label>
+            <figcaption>Bowery at Midnight (1942)</figcaption>
+          </figure>
+          <div class="lightbox-overlay">
+            <div class="lightbox-box">
+              <label for="lb10" class="lightbox-close">✕ Zatvori</label>
+              <img src="https://picsum.photos/seed/bowery/900/600" alt="Bowery at Midnight uvećano" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <div class="lb-item">
+          <input type="checkbox" id="lb11" class="lb-toggle" aria-hidden="true">
+          <figure class="galerija_slika">
+            <label for="lb11"><img src="https://picsum.photos/seed/warning/300/200" alt="Warning Sign (1985)" loading="lazy" width="300" height="200"></label>
+            <figcaption>Warning Sign (1985)</figcaption>
+          </figure>
+          <div class="lightbox-overlay">
+            <div class="lightbox-box">
+              <label for="lb11" class="lightbox-close">✕ Zatvori</label>
+              <img src="https://picsum.photos/seed/warning/900/600" alt="Warning Sign uvećano" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <div class="lb-item">
+          <input type="checkbox" id="lb12" class="lb-toggle" aria-hidden="true">
+          <figure class="galerija_slika">
+            <label for="lb12"><img src="https://picsum.photos/seed/ridepony/300/200" alt="Ride a Wild Pony (1976)" loading="lazy" width="300" height="200"></label>
+            <figcaption>Ride a Wild Pony (1976)</figcaption>
+          </figure>
+          <div class="lightbox-overlay">
+            <div class="lightbox-box">
+              <label for="lb12" class="lightbox-close">✕ Zatvori</label>
+              <img src="https://picsum.photos/seed/ridepony/900/600" alt="Ride a Wild Pony uvećano" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <div class="lb-item">
+          <input type="checkbox" id="lb13" class="lb-toggle" aria-hidden="true">
+          <figure class="galerija_slika">
+            <label for="lb13"><img src="https://picsum.photos/seed/bugsbunny/300/200" alt="Bugs Bunny's 3rd Movie (1982)" loading="lazy" width="300" height="200"></label>
+            <figcaption>Bugs Bunny's 3rd Movie (1982)</figcaption>
+          </figure>
+          <div class="lightbox-overlay">
+            <div class="lightbox-box">
+              <label for="lb13" class="lightbox-close">✕ Zatvori</label>
+              <img src="https://picsum.photos/seed/bugsbunny/900/600" alt="Bugs Bunny's 3rd Movie uvećano" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <div class="lb-item">
+          <input type="checkbox" id="lb14" class="lb-toggle" aria-hidden="true">
+          <figure class="galerija_slika">
+            <label for="lb14"><img src="https://picsum.photos/seed/ciascuno/300/200" alt="A ciascuno il suo (1967)" loading="lazy" width="300" height="200"></label>
+            <figcaption>A ciascuno il suo (1967)</figcaption>
+          </figure>
+          <div class="lightbox-overlay">
+            <div class="lightbox-box">
+              <label for="lb14" class="lightbox-close">✕ Zatvori</label>
+              <img src="https://picsum.photos/seed/ciascuno/900/600" alt="A ciascuno il suo uvećano" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <div class="lb-item">
+          <input type="checkbox" id="lb15" class="lb-toggle" aria-hidden="true">
+          <figure class="galerija_slika">
+            <label for="lb15"><img src="https://picsum.photos/seed/mrjim/300/200" alt="A mezzanotte (1975)" loading="lazy" width="300" height="200"></label>
+            <figcaption>A mezzanotte (1975)</figcaption>
+          </figure>
+          <div class="lightbox-overlay">
+            <div class="lightbox-box">
+              <label for="lb15" class="lightbox-close">✕ Zatvori</label>
+              <img src="https://picsum.photos/seed/mrjim/900/600" alt="A mezzanotte uvećano" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <div class="lb-item">
+          <input type="checkbox" id="lb16" class="lb-toggle" aria-hidden="true">
+          <figure class="galerija_slika">
+            <label for="lb16"><img src="https://picsum.photos/seed/comeass/300/200" alt="A... come assassino (1966)" loading="lazy" width="300" height="200"></label>
+            <figcaption>A... come assassino (1966)</figcaption>
+          </figure>
+          <div class="lightbox-overlay">
+            <div class="lightbox-box">
+              <label for="lb16" class="lightbox-close">✕ Zatvori</label>
+              <img src="https://picsum.photos/seed/comeass/900/600" alt="A... come assassino uvećano" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+  <footer role="contentinfo">
+    <p>
+      &copy; 2025. Web Programiranje – LV1 |
+      <a href="../pages/index.html">Početna</a> |
+      <a href="../pages/grafikon.html">Grafikoni</a>
+    </p>
+  </footer>
+
+</body>
+</html>

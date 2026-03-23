@@ -1,0 +1,183 @@
+/* =============================================
+   STYLE_SLIKE.CSS – Galerija i lightbox
+   CSS-only lightbox bez JavaScripta
+============================================= */
+
+.galerija-naslov {
+  font-size: 1.6rem;
+  color: #222;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.galerija-opis {
+  color: #777;
+  font-size: 0.9rem;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* =============================================
+   GALERIJA GRID
+   .galerija je grid container
+   .lb-item je svaka ćelija grida
+============================================= */
+.galerija {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  /* PROMJENA 1: animacija pojavljivanja galerije pri učitavanju */
+  animation: slide-up 0.5s ease both;
+}
+
+/* Svaki lb-item zauzima jednu ćeliju grida */
+.lb-item {
+  position: relative;
+}
+
+/* =============================================
+   FIGURE – pojedina slika u galeriji
+============================================= */
+.galerija_slika {
+  overflow: hidden;
+  border-radius: 8px;
+  background: #111;
+  /* PROMJENA 2: dodan box-shadow koji nije bio u originalnom predlošku */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+  margin: 0;
+}
+
+.galerija_slika:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+}
+
+.galerija_slika label {
+  display: block;
+  cursor: pointer;
+}
+
+.galerija_slika img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px 8px 0 0;
+  opacity: 0.92;
+  transition: opacity 0.3s ease, transform 0.4s ease;
+}
+
+.galerija_slika:hover img {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.galerija_slika figcaption {
+  padding: 6px 10px 8px;
+  font-size: 0.8rem;
+  color: #555;
+  text-align: center;
+  background: #fff;
+  border-radius: 0 0 8px 8px;
+}
+
+/* =============================================
+   CHECKBOX – nevidljiv ali funkcionalan
+============================================= */
+.lb-toggle {
+  display: none;
+}
+
+/* =============================================
+   LIGHTBOX OVERLAY
+   Skrivena po defaultu, prikazuje se kad je
+   checkbox označen (.lb-toggle:checked ~ .lightbox-overlay)
+   ~ radi jer su checkbox i overlay direktni siblings
+   unutar istog .lb-item
+============================================= */
+.lightbox-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Prikaži overlay kad je checkbox označen */
+.lb-toggle:checked ~ .lightbox-overlay {
+  display: flex;
+}
+
+.lightbox-box {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  text-align: center;
+  animation: lb-zoom 0.25s ease;
+}
+
+@keyframes lb-zoom {
+  from { transform: scale(0.92); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+
+.lightbox-box img {
+  max-width: 90vw;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 6px;
+  display: block;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Gumb za zatvaranje – klik odznačava checkbox */
+.lightbox-close {
+  display: inline-block;
+  background: #3498db;
+  color: white;
+  padding: 6px 18px;
+  border-radius: 5px;
+  font-size: 0.88rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 12px;
+  transition: background 0.2s;
+  user-select: none;
+}
+
+.lightbox-close:hover {
+  background: #2980b9;
+}
+
+/* =============================================
+   RESPONSIVNOST
+============================================= */
+@media (max-width: 900px) {
+  .galerija {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .galerija {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .galerija_slika img {
+    height: 120px;
+  }
+}
+
+@media (max-width: 380px) {
+  .galerija {
+    grid-template-columns: 1fr;
+  }
+  .galerija_slika img {
+    height: 200px;
+  }
+}
